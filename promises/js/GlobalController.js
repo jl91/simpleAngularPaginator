@@ -37,7 +37,7 @@ app.controller('GlobalController', ['$scope', 'Promises',
         };
 
         $scope.next = function () {
-            if ($scope.currentPage < $scope.total / $scope.limit) {
+            if ($scope.currentPage < parseInt($scope.total / $scope.limit)) {
                 $scope.currentPage++;
                 $scope.offset = $scope.currentPage * $scope.limit;
                 $scope.getCollection();
@@ -54,9 +54,11 @@ app.controller('GlobalController', ['$scope', 'Promises',
         };
 
         $scope.last = function () {
-            if ($scope.currentPage > 0) {
-                $scope.currentPage--;
+            if ($scope.currentPage >= 0) {
+                var lastPage = parseInt($scope.total / $scope.limit);
+                $scope.currentPage = lastPage;
                 $scope.offset = $scope.currentPage * $scope.limit;
+                
                 $scope.getCollection();
             }
 
