@@ -8,7 +8,7 @@ app.controller('GlobalController', ['$scope', 'Promises',
 
         $scope.getCollection = function () {
 
-            var promise = Promises.getDate('/conexao.php', {limit: $scope.limit, currentPage: $scope.currentPage, offset: $scope.offset});
+            var promise = Promises.getDate('/connection.php', {limit: $scope.limit, currentPage: $scope.currentPage, offset: $scope.offset});
 
             promise.success(function (response) {
                 $scope.total = response.total;
