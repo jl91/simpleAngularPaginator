@@ -1,0 +1,27 @@
+<ul class="list list-unstilized list-inline text-center">
+    <li>
+        Página: {{(currentPage + 1) + "/" + formatInt((total / limit))}} 
+    </li>
+    <li>
+        Total: {{formatInt(total)}} 
+    </li>
+    <li>
+        itens por página
+        <select ng-model="newLimit" ng-init="newLimit = limit" ng-change="setNewLimit(newLimit)" ng-options="item as item for item in [10,20,30,40,50,100,200,500]" ></select>
+    </li>
+</ul>
+<hr>
+<ul class="list list-unstilized list-inline text-center">
+    <li>
+        <button class="btn btn-default btn-success" ng-click="first()"><< Primeira</button>
+    </li>
+    <li>
+        <button class="btn btn-default btn-success" ng-click="prev()">< Anterior</button>
+    </li>
+    <li>
+        <button class="btn btn-default btn-success" ng-click="next()"> Próxima ></button>
+    </li>
+    <li>
+        <button class="btn btn-default btn-success" ng-click="last()"> Última >></button>
+    </li>
+</ul>
