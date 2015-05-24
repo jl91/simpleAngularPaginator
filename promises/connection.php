@@ -4,10 +4,6 @@ $request = json_decode(file_get_contents("php://input"));
 
 $pdo = new \PDO();
 $pdo->exec('SET CHARACTER SET UTF-8');
-//
-//
-//print_r($request);
-//exit();
 
 $query = ' SELECT * FROM usuario ';
 
